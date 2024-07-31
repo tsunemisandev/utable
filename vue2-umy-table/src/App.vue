@@ -10,19 +10,25 @@ tableData.value = [
 ]
 
 const selectAll = (rows) => {
-  multipleTable.value.clearSelection()
+  console.log(multipleTable.value)
   if (!allSelected.value) {
+    multipleTable.value.clearSelection()
     rows.forEach((row, index) => {
       if (row.name === 'Thiago') {
         multipleTable.value.toggleRowSelection([{ row: row, selected: true }])
       }
     })
+  } else {
+
+    multipleTable.value.clearSelection()
+
   }
   allSelected.value = !allSelected.value
 }
 
 function handleSelectionChange(val) {
   multipleSelection.value = val;
+  // console.log(multipleSelection.value.length)
 }
 
 </script>
